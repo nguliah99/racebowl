@@ -76,7 +76,7 @@ export function HomeClient() {
         </div>
         <div className="mt-4 grid grid-cols-2 gap-3">
           <Link href="/menu/customize">
-            <div className="rounded-[24px] bg-gradient-to-br from-orange-500 to-orange-400 p-4 text-black">
+            <div className="rounded-[24px] bg-linear-to-br from-orange-500 to-orange-400 p-4 text-black">
               <div className="race-title text-[1.7rem] leading-none">
                 Pickup
               </div>

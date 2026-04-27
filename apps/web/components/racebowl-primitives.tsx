@@ -118,7 +118,7 @@ export function MenuCard({
       <Card className="overflow-hidden rounded-[26px] border-white/10 bg-white/[0.03]">
         <div className="relative h-40 overflow-hidden">
           <Image src={image} alt={title} fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-black/15 to-transparent" />
           {badge ? (
             <div className="absolute left-3 top-3 rounded-full bg-orange-500 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-black">
               {badge}
@@ -289,7 +289,7 @@ export function VoucherCard({
   return (
     <Card className={cn("overflow-hidden p-4", muted && "opacity-60")}>
       <div className="flex gap-4">
-        <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-[24px] bg-gradient-to-br from-orange-500 to-amber-300 text-2xl font-black text-black">
+        <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-[24px] bg-linear-to-br from-orange-500 to-amber-300 text-2xl font-black text-black">
           {imageLabel}
         </div>
         <div className="flex-1 space-y-2">
@@ -338,7 +338,7 @@ export function RewardGridCard({
   const visual = image.startsWith("http") ? (
     <Image src={image} alt={title} fill className="object-cover" />
   ) : (
-    <div className="flex h-full items-center justify-center bg-gradient-to-br from-orange-500/90 to-amber-300 text-2xl font-black text-black">
+    <div className="flex h-full items-center justify-center bg-linear-to-br from-orange-500/90 to-amber-300 text-2xl font-black text-black">
       {image === "voucher" ? "RP" : "RB"}
     </div>
   );

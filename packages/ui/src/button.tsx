@@ -22,7 +22,7 @@ export function Button({
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-2xl border text-sm font-semibold tracking-[0.02em] transition active:scale-[0.99]",
         variant === "primary" &&
-          "border-orange-400 bg-gradient-to-r from-orange-500 to-orange-400 text-black shadow-[0_0_24px_rgba(249,115,22,0.35)]",
+          "border-orange-400 bg-linear-to-r from-orange-500 to-orange-400 text-black shadow-[0_0_24px_rgba(249,115,22,0.35)]",
         variant === "outline" &&
           "border-orange-500/70 bg-orange-500/5 text-orange-300",
         variant === "ghost" &&
