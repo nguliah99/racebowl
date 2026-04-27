@@ -6,11 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AppIcon } from "./icons";
 
+const HIDE_ON = ["/menu/customize"];
+
 export function BottomNav() {
   const pathname = usePathname();
 
+  if (HIDE_ON.some((p) => pathname?.startsWith(p))) return null;
+
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 mx-auto w-full max-w-[430px] border-t border-white/10 bg-black/95 px-2 pb-4 pt-2 backdrop-blur-xl">
+    <div className="fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-[430px] border-t border-white/10 bg-black/95 px-2 pb-4 pt-2 backdrop-blur-xl">
       <div className="grid grid-cols-5 gap-1 text-[11px] text-white/55">
         {navItems.map((item) => {
           const active =

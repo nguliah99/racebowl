@@ -221,44 +221,186 @@ export const menuItems = menuItemSchema.array().parse([
   },
 ]);
 
-type CustomizerOption = { title: string; price: number; selected?: boolean };
+type CustomizerOption = {
+  title: string;
+  price: number;
+  selected?: boolean;
+  tone?: string;
+  image?: string;
+  badge?: "spicy" | "new";
+};
 
 export const customizer: {
   basePrice: number;
   protein: string;
+  proteins: CustomizerOption[];
+  menuTypes: { slug: string; title: string; subtitle: string; image: string }[];
   riceOptions: CustomizerOption[];
   sauces: CustomizerOption[];
   eggs: CustomizerOption[];
   drinks: CustomizerOption[];
+  comboUpgradePrice: number;
+  ongkir: number;
 } = {
   basePrice: 28000,
   protein: "Chicken",
+  menuTypes: [
+    {
+      slug: "rice-bowl",
+      title: "Rice Bowl",
+      subtitle: "Nasi + Protein + Topping",
+      image:
+        "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      slug: "ala-carte",
+      title: "Ala Carte",
+      subtitle: "Protein + Topping",
+      image:
+        "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    },
+  ],
+  proteins: [
+    {
+      title: "Chicken",
+      price: 28000,
+      selected: true,
+      image:
+        "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Beef",
+      price: 30000,
+      image:
+        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Spicy Chicken",
+      price: 29000,
+      badge: "spicy",
+      image:
+        "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Double Chicken",
+      price: 36000,
+      image:
+        "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=600&q=80",
+    },
+    {
+      title: "Shrimp",
+      price: 32000,
+      badge: "new",
+      image:
+        "https://images.unsplash.com/photo-1565299585323-38174c4a6471?auto=format&fit=crop&w=600&q=80",
+    },
+  ],
   riceOptions: [
-    { title: "Nasi Putih", price: 0, selected: true },
-    { title: "Nasi Garlic", price: 3000 },
-    { title: "Nasi Mentega", price: 3000 },
-    { title: "Nasi Merah", price: 3000 },
+    {
+      title: "Nasi Putih",
+      price: 0,
+      selected: true,
+      tone: "bg-linear-to-br from-white to-zinc-200 text-black",
+    },
+    {
+      title: "Nasi Garlic",
+      price: 3000,
+      tone: "bg-linear-to-br from-amber-200 to-amber-400 text-black",
+    },
+    {
+      title: "Nasi Mentega",
+      price: 3000,
+      tone: "bg-linear-to-br from-yellow-200 to-yellow-400 text-black",
+    },
+    {
+      title: "Nasi Merah",
+      price: 3000,
+      tone: "bg-linear-to-br from-rose-300 to-rose-500 text-black",
+    },
   ],
   sauces: [
-    { title: "Race Sauce", price: 0, selected: true },
-    { title: "Spicy Mayo", price: 0, selected: true },
-    { title: "Teriyaki", price: 0, selected: true },
-    { title: "Garlic Butter", price: 0 },
-    { title: "Cheese Sauce", price: 3000 },
+    {
+      title: "Race Sauce",
+      price: 0,
+      selected: true,
+      tone: "bg-linear-to-br from-red-500 to-red-700",
+    },
+    {
+      title: "Spicy Mayo",
+      price: 0,
+      selected: true,
+      tone: "bg-linear-to-br from-orange-300 to-orange-500",
+    },
+    {
+      title: "Teriyaki",
+      price: 0,
+      selected: true,
+      tone: "bg-linear-to-br from-amber-900 to-stone-900",
+    },
+    {
+      title: "Garlic Butter",
+      price: 0,
+      tone: "bg-linear-to-br from-yellow-300 to-yellow-500",
+    },
+    {
+      title: "Cheese Sauce",
+      price: 3000,
+      tone: "bg-linear-to-br from-yellow-100 to-yellow-300",
+    },
   ],
   eggs: [
-    { title: "Setengah Matang", price: 0, selected: true },
-    { title: "Matang", price: 0 },
-    { title: "Orak Arik", price: 0 },
-    { title: "Tidak Pakai Telur", price: 0 },
+    {
+      title: "Setengah Matang",
+      price: 0,
+      selected: true,
+      tone: "bg-linear-to-br from-yellow-200 to-orange-400",
+    },
+    {
+      title: "Matang",
+      price: 0,
+      tone: "bg-linear-to-br from-yellow-200 to-yellow-500",
+    },
+    {
+      title: "Orak Arik",
+      price: 0,
+      tone: "bg-linear-to-br from-yellow-300 to-amber-500",
+    },
+    {
+      title: "Tidak Pakai Telur",
+      price: 0,
+      tone: "border-2 border-dashed border-white/30 bg-transparent",
+    },
   ],
   drinks: [
-    { title: "Lemon Tea", price: 12000, selected: true },
-    { title: "Mineral Water", price: 6000 },
-    { title: "Coke", price: 10000 },
-    { title: "Es Jeruk", price: 10000 },
-    { title: "Pink Lava", price: 14000 },
+    {
+      title: "Lemon Tea",
+      price: 12000,
+      selected: true,
+      tone: "bg-linear-to-br from-amber-400 to-orange-600",
+    },
+    {
+      title: "Mineral Water",
+      price: 6000,
+      tone: "bg-linear-to-br from-zinc-200 to-zinc-400 text-black",
+    },
+    {
+      title: "Coke",
+      price: 10000,
+      tone: "bg-linear-to-br from-stone-700 to-stone-900",
+    },
+    {
+      title: "Es Jeruk",
+      price: 10000,
+      tone: "bg-linear-to-br from-lime-300 to-yellow-400 text-black",
+    },
+    {
+      title: "Pink Lava",
+      price: 14000,
+      tone: "bg-linear-to-br from-pink-400 to-rose-600",
+    },
   ],
+  comboUpgradePrice: 3000,
+  ongkir: 6000,
 };
 
 export const orders = orderSchema.array().parse([
