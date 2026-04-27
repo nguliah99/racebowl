@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "order": "Order",
+    "points": "Race Points",
+    "profile": "Profil"
+  },
+  "brand": {
+    "name": "RaceBowl",
+    "tagline": "Live the race. Feel the thrill."
+  },
+  "common": {
+    "back": "Kembali",
+    "seeAll": "Lihat semua",
+    "useNow": "Gunakan sekarang",
+    "primaryCta": "Pesan sekarang"
+  }
+}
