@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./*"],
+      "@racebowl/api": ["../../packages/api/src/index.ts"],
+      "@racebowl/auth": ["../../packages/auth/src/index.ts"],
+      "@racebowl/db": ["../../packages/db/src/index.ts"],
+      "@racebowl/ui/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

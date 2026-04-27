@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@racebowl/api": ["packages/api/src/index.ts"],
+      "@racebowl/auth": ["packages/auth/src/index.ts"],
+      "@racebowl/db": ["packages/db/src/index.ts"],
+      "@racebowl/ui/*": ["packages/ui/src/*"]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@racebowl/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
+    "./mobile-shell": "./src/mobile-shell.tsx",
+    "./progress": "./src/progress.tsx",
+    "./utils": "./src/utils.ts"
+  }
+}
